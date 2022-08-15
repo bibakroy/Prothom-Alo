@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: $bottom-border;
+
+  p {
+    width: 4.5rem;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1rem;
+    color: $light-gray;
+  }
+
+  .display {
+    background: rgb(236, 233, 233);
+    color: $dark-gray;
+    padding-bottom: 0.6rem;
+    border-bottom: 3px solid red;
+  }
+}

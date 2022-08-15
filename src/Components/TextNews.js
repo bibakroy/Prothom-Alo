@@ -5,7 +5,7 @@ function TextNews({ displayNews }) {
   return (
     <>
       {displayNews && (
-        <div className={styles.container}>
+        <>
           {displayNews
             .sort((a, b) => a.sort - b.sort)
             .map((item, index) => {
@@ -24,7 +24,7 @@ function TextNews({ displayNews }) {
                 </div>
               );
             })}
-        </div>
+        </>
       )}
     </>
   );

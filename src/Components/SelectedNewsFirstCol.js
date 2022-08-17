@@ -3,7 +3,6 @@ import styles from "../Styles/SelectedNewsFirstCol.module.scss";
 
 function SelectedNewsFirstCol({ selectedNews }) {
   const [sortedSelectedNews, setSortedSelectedNews] = useState();
-  console.log({ sortedSelectedNews });
 
   useEffect(() => {
     if (selectedNews) {
@@ -23,12 +22,14 @@ function SelectedNewsFirstCol({ selectedNews }) {
             {sortedSelectedNews.slice(0, 1).map((item, index) => {
               return (
                 <div key={index} className={styles.coverNews}>
-                  <img src={item.thumb} alt={item.thumb} />
-                  <h2>
-                    <span>{item.subheadline ? item.subheadline : ""}</span>
-                    {item.subheadline ? " / " : ""}
-                    {item.headline}
-                  </h2>
+                  <a href={`newsDetails/${item.id}`}>
+                    <img src={item.thumb} alt={item.thumb} />
+                    <h2>
+                      <span>{item.subheadline ? item.subheadline : ""}</span>
+                      {item.subheadline ? " / " : ""}
+                      {item.headline}
+                    </h2>
+                  </a>
                 </div>
               );
             })}
@@ -36,13 +37,15 @@ function SelectedNewsFirstCol({ selectedNews }) {
               {sortedSelectedNews.slice(1, 3).map((item, index) => {
                 return (
                   <div key={index} className={styles.coverAndHeading}>
-                    <img src={item.thumb} alt={item.thumb} />
-                    <h2>
-                      <span>{item.subheadline ? item.subheadline : ""}</span>
-                      {item.subheadline ? " / " : ""}
-                      {item.headline}
-                    </h2>
-                    <p>১৬ ঘণ্টা আগে</p>
+                    <a href={`newsDetails/${item.id}`}>
+                      <img src={item.thumb} alt={item.thumb} />
+                      <h2>
+                        <span>{item.subheadline ? item.subheadline : ""}</span>
+                        {item.subheadline ? " / " : ""}
+                        {item.headline}
+                      </h2>
+                      <p>১৬ ঘণ্টা আগে</p>
+                    </a>
                   </div>
                 );
               })}

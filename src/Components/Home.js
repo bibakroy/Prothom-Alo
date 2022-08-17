@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "../Styles/Home.module.scss";
-import prothomAlo from "../assets/images/prothomAlo.svg";
 import adOne from "../assets/images/adOne.gif";
 import adTwo from "../assets/images/adTwo.gif";
-import Navbar from "./Navbar";
+import NewsMenu from "./NewsMenu";
 import news from "../assets/data/news.json";
 import TextNews from "./TextNews";
 import SelectedNewsFirstCol from "./SelectedNewsFirstCol";
 import SelectedNewsSecondCol from "./SelectedNewsSecondCol";
+import Navbar from "./Navbar";
 
 function Home() {
   const [display, setDisplay] = useState("latest");
@@ -18,7 +18,6 @@ function Home() {
     Object.entries(news).forEach(([key, value]) => {
       if (key === display) {
         setDisplayNews(value.items);
-        console.log(value.items);
       }
     });
   }, [display]);
@@ -33,12 +32,10 @@ function Home() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>
-        <img src={prothomAlo} alt="prothom-alo" />
-      </div>
+      <Navbar />
       <div className={styles.column}>
         <div className={styles.columnOne}>
-          <Navbar display={display} setDisplay={setDisplay} />
+          <NewsMenu display={display} setDisplay={setDisplay} />
           <TextNews displayNews={displayNews} />
           <div className={`${styles.adOne} ${styles.mobile}`}>
             <p>বিজ্ঞাপন</p>
@@ -65,7 +62,10 @@ function Home() {
         </div>
       </div>
       <div className={styles.adTwo}>
-        <img src={adTwo} alt="adTwo" />
+        <div className={styles.adTwoCover}>
+          <p>বিজ্ঞাপন</p>
+          <img src={adTwo} alt="adTwo" />
+        </div>
       </div>
     </div>
   );

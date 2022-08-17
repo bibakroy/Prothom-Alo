@@ -14,13 +14,15 @@ function TextNews({ displayNews }) {
                   <p className={styles.newsCount}>
                     {(index + 1).toLocaleString("bn")}
                   </p>
-                  <h2>
-                    <span style={{ color: "red" }}>
-                      {item.subheadline ? item.subheadline : ""}
-                    </span>
-                    {item.subheadline ? " / " : ""}
-                    {item.headline}
-                  </h2>
+                  <a href={`newsDetails/${item.id}`}>
+                    <h2>
+                      <span style={{ color: "red" }}>
+                        {item.subheadline ? item.subheadline : ""}
+                      </span>
+                      {item.subheadline ? " / " : ""}
+                      {item.headline}
+                    </h2>
+                  </a>
                 </div>
               );
             })}

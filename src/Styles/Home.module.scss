@@ -10,18 +10,6 @@
   align-items: center;
 }
 
-.logo {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-
-  img {
-    width: 10rem;
-    margin: 1.5rem;
-  }
-}
-
 .column {
   max-width: 1600px;
   display: flex;
@@ -43,6 +31,7 @@
     align-items: center;
     padding-bottom: 1.5rem;
     border-bottom: $bottom-border;
+    cursor: pointer;
   }
 
   .mobile {
@@ -61,8 +50,16 @@
   align-items: center;
   padding: 1rem;
 
+  .adTwoCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   img {
     width: 100%;
+    cursor: pointer;
   }
 }
 
